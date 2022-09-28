@@ -4,8 +4,6 @@ import DetailedInfo from "./DetailedInfo"
 
 const CountryList = (props) => {
     //make button with state, if its clicked then return detailed info for that specific country
-    console.log(props.filteredCountries)
-
 
     if (props.filteredCountries.length > 10){
         return (

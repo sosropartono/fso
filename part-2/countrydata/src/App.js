@@ -18,7 +18,6 @@ const App = () => {
 
   const hook = () => {
     axios.get(('https://restcountries.com/v2/all')).then((response) => {
-      console.log(response.data)
       setCountryList(response.data)
     })
   }
