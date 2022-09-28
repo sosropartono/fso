@@ -1,26 +1,29 @@
 import DetailedInfo from "./DetailedInfo"
 
-const CountryList = ({search, countryList, filteredCountries}) => {
-    console.log(filteredCountries)
-    if (filteredCountries.length > 10){
+
+
+const CountryList = (props) => {
+    //make button with state, if its clicked then return detailed info for that specific country
+    console.log(props.filteredCountries)
+
+
+    if (props.filteredCountries.length > 10){
         return (
             <p>Too many countries, please specify</p>
         )
     }
-    if (filteredCountries.length == 1){
-        console.log(filteredCountries[0])
+    if (props.filteredCountries.length == 1){
         return (
             <div>
-
-                <DetailedInfo country={filteredCountries[0]} />
+                <DetailedInfo country={props.filteredCountries[0]} api_key={props.api_key} />
             </div>
         )
     }
     return (
             <div>
-                {filteredCountries.map((country) => {
+                {props.filteredCountries.map((country) => {
                     return <div>
-                        {country.name}
+                        {country.name} <button id={country.name} onClick={props.show}>show</button>
                     </div>
                 }) }
             </div>
