@@ -1,7 +1,7 @@
-const Filter = ({ search, filterPeople }) => {
+const Filter = ({ search, changeSearch }) => {
 
     return (<form>
-        filter shown with: <input value={search} onChange={filterPeople}>
+        filter shown with: <input value={search} onChange={changeSearch}>
         </input>
     </form>)
 }

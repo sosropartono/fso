@@ -1,9 +1,9 @@
-const Persons = ({ persons, filtered, search }) => {
-    if (search == '') {
+const Persons = ({ persons, filtered, search}) => {
+    if (search === '') {
         return (
             <div>
                 {persons.map(person => {
-                    return <div key={person.name}>{person.name} {person.number}</div>
+                    return <div key={person.name}>{person.name} {person.number} <button>delete</button>  </div>
                 })}
             </div>
         )
@@ -12,7 +12,7 @@ const Persons = ({ persons, filtered, search }) => {
         return (
             <div>
                 {filtered.map(person => {
-                    return <div key={person.name}>{person.name} {person.number}</div>
+                    return <div key={person.name}>{person.name} {person.number} </div>
                 })}
             </div>
         )

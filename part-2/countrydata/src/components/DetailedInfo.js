@@ -8,12 +8,11 @@ const DetailedInfo = ({country, api_key}) => {
     const [info, setInfo] = useState('')
     
 
-    // Have an issue here regarding the side effect of useEffect AFTER rendering, solved by using conditional to check if data has been fetched from the API 
+    // Have an issue here regarding the side effect of useEffect is done AFTER rendering, solved by using conditional to check if data has been fetched from the API 
     // and updating the state once it does, thus re-rendering the rest of the DetailedInfo component
     
     const hook = () => {
         axios.get((`https://api.openweathermap.org/data/2.5/weather?lat=${country.latlng[0]}&lon=${country.latlng[1]}&appid=${api_key}`)).then((response) => {
-            console.log(response.data)
             setInfo(response.data)
         })
       }

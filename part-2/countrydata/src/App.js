@@ -25,22 +25,19 @@ const App = () => {
 
 
   //had an issue deciding on where I can use the show button and render the DetailedInfo component, since I cannot pass the country argument
-  //Solution that worked was to set the button id to the name then filter teh countries to include that name which then renders the detailed component
-  // as the requirement to render that component is set to whenever filteredCountries is 1
+  //Solution that worked was to set the button id to the name then filter the countries to include that name which then renders the detailed component
+  // as the requirement to render that component is set to show  whenever filteredCountries is 1 since that is a conditional
+  //optional solution was maybe to filter it by id, then display it as you can send over the id by using an anon function
 
   const showButtonClicked = (event) => {
     console.log(String(event.target.id))
     const newArr = countryList.filter((country) => {
+      //Better way to do this? Maybe make the id part of the country object, add another react element where you can show and hide
       return country.name.toLowerCase().includes(event.target.id.toLowerCase())
     })
     setFiltered(newArr)
 
     }
-
-
-
-  
-
 
   const filterCountry = (event) => {
     if(search == ''){
